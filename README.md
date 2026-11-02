@@ -18,7 +18,7 @@ Compatibility changes and this README were prepared with **OpenAI Codex**. The o
 
 ## Install
 
-1. Download [`Common.Utilities.dll`](https://raw.githubusercontent.com/Tomut0/Common-Utils/master/dist/Common.Utilities.dll).
+1. Download [`Common.Utilities.dll`](https://github.com/Tomut0/Common-Utils/releases/latest/download/Common.Utilities.dll).
 2. Put it in your EXILED plugin directory, for example `.config/EXILED/Plugins/<port>/` on Linux.
 3. Start the server. EXILED creates the plugin configuration under its `Configs/Plugins/CommonUtilities` directory.
 
