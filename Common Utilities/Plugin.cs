@@ -41,9 +41,9 @@ public class Plugin : Plugin<Config>
 
     public override string Author { get; } = "ExMod-Team";
 
-    public override Version Version { get; } = new(8, 1, 2);
+    public override Version Version { get; } = new(8, 1, 3);
 
-    public override Version RequiredExiledVersion { get; } = new(9, 8, 1);
+    public override Version RequiredExiledVersion { get; } = new(9, 15, 2);
 
     public override string Prefix { get; } = "CommonUtilities";
 
@@ -70,6 +70,12 @@ public class Plugin : Plugin<Config>
         player.Verified += playerHandlers.OnPlayerVerified;
         player.Spawned += playerHandlers.OnSpawned;
         player.Escaping += playerHandlers.OnEscaping;
+
+        if (Config.RestrictiveDisarming)
+        {
+            player.InteractingDoor += playerHandlers.OnInteractingDoor;
+            player.InteractingElevator += playerHandlers.OnInteractingElevator;
+        }
             
         if (Config.HealthOnKill != null)
             player.Died += playerHandlers.OnPlayerDied;
@@ -119,6 +125,8 @@ public class Plugin : Plugin<Config>
         player.Verified -= playerHandlers.OnPlayerVerified;
         player.Spawned -= playerHandlers.OnSpawned;
         player.Escaping -= playerHandlers.OnEscaping;
+        player.InteractingDoor -= playerHandlers.OnInteractingDoor;
+        player.InteractingElevator -= playerHandlers.OnInteractingElevator;
         player.Died -= playerHandlers.OnPlayerDied;
         player.ChangingRole -= playerHandlers.OnChangingRole;
         player.UsingRadioBattery -= playerHandlers.OnUsingRadioBattery;

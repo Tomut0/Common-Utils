@@ -31,6 +31,9 @@ namespace Common_Utilities
                     RoleTypeId.ChaosMarauder, RoleTypeId.NtfCaptain
                 },
             };
+
+        [Description("Prevent cuffed players from interacting with doors and elevators.")]
+        public bool RestrictiveDisarming { get; set; } = false;
         
         [Description("The text displayed at the timed interval specified below.")]
         public string TimedBroadcast { get; set; } = "<color=#bfff00>This server is running </color><color=red>EXILED Common-Utilities</color><color=#bfff00>, enjoy your stay!</color>";

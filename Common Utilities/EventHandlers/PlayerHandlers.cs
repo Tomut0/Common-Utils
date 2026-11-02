@@ -136,6 +136,18 @@ public class PlayerHandlers
         }
     }
 
+    public void OnInteractingDoor(InteractingDoorEventArgs ev)
+    {
+        if (ev.Player.IsCuffed && config.RestrictiveDisarming)
+            ev.IsAllowed = false;
+    }
+
+    public void OnInteractingElevator(InteractingElevatorEventArgs ev)
+    {
+        if (ev.Player.IsCuffed && config.RestrictiveDisarming)
+            ev.IsAllowed = false;
+    }
+
     public void OnUsingRadioBattery(UsingRadioBatteryEventArgs ev)
     {
         ev.Drain *= config.RadioBatteryDrainMultiplier;
